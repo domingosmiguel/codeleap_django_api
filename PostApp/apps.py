@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class PostgresdbConfig(AppConfig):
+class PostAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'postgresdb'
+    name = 'PostApp'
