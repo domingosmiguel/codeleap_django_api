@@ -47,11 +47,9 @@ INSTALLED_APPS = [
     'PostApp.apps.PostAppConfig',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
-
-# CORS_ALLOWED_ORIGINS = (
-#     '',
-# )
+CORS_ALLOWED_ORIGINS = (
+    os.environ.setdefault('FRONTEND_BASE_URL', 'http://localhost:3000'),
+)
 
 CORS_ALLOW_METHODS = (
     'DELETE',

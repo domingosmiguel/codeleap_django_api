@@ -1,4 +1,4 @@
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_protect
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 
@@ -6,7 +6,7 @@ from PostApp.models import Post
 from PostApp.serializers import PostSerializer
 
 
-@csrf_exempt
+@csrf_protect
 def postApi(request, id=0):
     if request.method == 'GET':
         posts = Post.objects.order_by('created_datetime').reverse()
