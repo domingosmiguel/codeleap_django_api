@@ -28,9 +28,12 @@ SECRET_KEY = os.environ.get(
     'SECRET_KEY', 'django-insecure-jagw4nvy8g@q3ce53v0b+!qr7%mvb^c4^!-k3jfdhc8ks*5r$$')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'codeleap-api.onrender.com']
 
 
 # Application definition
@@ -48,7 +51,7 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = (
-    os.environ.setdefault('FRONTEND_BASE_URL', 'http://localhost:3000'),
+    os.environ.get('FRONTEND_BASE_URL', 'http://localhost:3000'),
 )
 
 CORS_ALLOW_METHODS = (
